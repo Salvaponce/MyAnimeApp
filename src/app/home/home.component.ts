@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimesService } from '../animes.service';
+import { Animes } from '../animes.model';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +12,12 @@ import { AnimesService } from '../animes.service';
 })
 export class HomeComponent implements OnInit{
 
-  constructor(animesService : AnimesService) { }
+  animes: Animes[];
+
+  constructor(private animesService : AnimesService) { }
 
   ngOnInit(): void {
-    
-  }
-
-  getAnime(){
-
+    this.animes = this.animesService.getAnimes();
   }
 
 }
