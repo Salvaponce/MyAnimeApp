@@ -1,9 +1,30 @@
-<p>home works!</p>
-<div>
-  <div *ngFor = "let anime of animes" class = "animesResults">
-    <div>{{anime.name}}</div>
-    <div>{{anime.synopsis}}</div>
-    <div>{{anime.episodes}}</div>
-    <div>{{anime.score}}</div>
+<div class="outer_container">
+
+  <div class="big_container">
+    <div class="top_bar">
+      <span>Find Animes</span>
+    </div>
+    <div class="transparent_bg">
+      <div class="container">        
+        <div class="anime_pane">  
+          <div class="anime_headers">
+            <div class="name cell"> Name </div>
+            <div class="synopsis cell"> Synopsis </div>
+            <div class="score cell"> Score </div>
+            <div class="episodes cell"> Episodes </div>
+          </div>
+          
+          <div *ngFor="let anime of animes" class="anime_results">
+            <div class="name cell"> {{anime.name}}</div>
+            <div class="synopsis cell"> {{anime.synopsis}}</div>
+            <div class="score cell"> {{anime.score}}</div>
+            <div class="episodes cell"> {{anime.episodes}}</div>
+          </div>
+          <div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+  </div>
