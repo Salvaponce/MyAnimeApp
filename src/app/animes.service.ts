@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Animes } from './animes.model';
+import { Observable } from 'rxjs';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +14,21 @@ export class AnimesService {
     {name: "One piece", synopsis: "Luffy will be the pirate king", episodes: 1094, score: 10, categories: ["action", "fantasy"]}
   ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAnimes () {
+  /*getAnimes () {
     return this.animes;
+  }*/
+
+    getFlights(): Observable<any> {
+    return this.http.get('http://localhost:3002/animes/');
+  }
+
+  postFlight(anime: Animes) {
+
+  }
+
+  deleteFlight(id: number) {
+    
   }
 }

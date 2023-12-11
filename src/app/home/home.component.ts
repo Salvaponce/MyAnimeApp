@@ -17,7 +17,10 @@ export class HomeComponent implements OnInit{
   constructor(private animesService : AnimesService) { }
 
   ngOnInit(): void {
-    this.animes = this.animesService.getAnimes();
+    //this.animes = this.animesService.getAnimes();
+    this.animesService.getFlights().subscribe(data => {
+      this.animes = data;
+    })
   }
 
 }
