@@ -9,8 +9,9 @@
         <div class="anime_pane">
 
           <div class="search_box">
-            <select>
+            <select [(ngModel)]= "selectedCategory">
               <option value="" disabled selected>Choose...</option>
+               <option *ngFor ="let result of filteredList; let i=index" value={{result.name}} >{{result.name}}</option>
               <option value="dr" >Drama</option>
               <option value="sl" >Slice of life</option>
               <option value="rm" >Romance</option>
@@ -18,7 +19,7 @@
           </div>
 
           <div class="search_box">
-            <button>Go</button>
+            <button (click)="query()">Go</button>
           </div>
 
           <div class="anime_headers">
